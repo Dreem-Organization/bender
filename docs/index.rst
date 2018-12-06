@@ -7,6 +7,7 @@ Table Of Content
    :caption: Introduction
    :maxdepth: 2
 
+   what_is_bender
    vocabulary
    use_webapp
 

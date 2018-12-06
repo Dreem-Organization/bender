@@ -23,7 +23,7 @@ Dashboard
 The dashboard is the heart of the web client and is divided in different parts:
 
 The menu
-========
+********
 
 .. image:: https://i.ibb.co/98ppz4s/Screen-Shot-2018-11-26-at-11-01-13.png
    :alt: Dashboard menu
@@ -35,7 +35,7 @@ The Bender logo at the top indicates the activity of the page. When the antena o
 You can hide or show this menu by clicking on the little arrow on the side.
 
 The dynamic breadcrumb
-======================
+**********************
 
 .. image:: https://i.ibb.co/hKtS1hM/Screen-Shot-2018-11-26-at-11-01-00.png
    :alt: Dynamic breadcrumb
@@ -49,12 +49,12 @@ You can also navigate between the **Boards** by cliking the desired element.
 At the far right you will find either the ID of the **Experiment** or **Algo** that is displayed on the **Board** : just click it to copy an use it in the other clients.
 
 The boards
-==========
+**********
 
 Again, within the boards we can identify different elements :
 
 The experiments board
----------------------
+*********************
 
 .. image:: https://i.ibb.co/YyXY1Hr/Screen-Shot-2018-11-26-at-11-14-30.png
    :alt: Experiments board
@@ -66,7 +66,7 @@ Either click on one to switch to the **Ranking Board** of this **Experiment** or
 To create a new **Experiment** just click the green plus sign at the bottom of the list.
 
 The ranking board
------------------
+*****************
 
 .. image:: https://i.ibb.co/8bXTrRg/Screen-Shot-2018-11-26-at-11-14-12.png
    :alt: Ranking board
@@ -84,7 +84,7 @@ On **Algo** cell hover, two buttons appears : edit and delete.
 And still within the **Algo** cell you have 2 buttons to enter the **Trials Board** and explore all your **Trials** either with a line chart or a scatter chart.
 
 The trials board
-----------------
+****************
 
 .. image:: https://i.ibb.co/NxMLN21/Screen-Shot-2018-11-26-at-11-00-17.png
    :alt: Trials board

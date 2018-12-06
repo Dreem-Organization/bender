@@ -23,6 +23,3 @@ Table Of Content
 
     documentation/general
     documentation/python
-    documentation/r
-    documentation/matlab
-

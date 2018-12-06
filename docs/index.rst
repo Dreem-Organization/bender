@@ -16,8 +16,6 @@ Table Of Content
     :caption: Quickstart guides
 
     quickstart/python
-    quickstart/r
-    quickstart/matlab
 
 .. toctree::
     :maxdepth: 2

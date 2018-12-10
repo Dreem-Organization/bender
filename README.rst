@@ -20,6 +20,7 @@ Bender Clients Status
 About Bender
 ************
 
+
 Bender is a Hyper Parameters Optimizer that can be plug to every black box algorithm to improve its performances.
 
 Bender is composed of different parts. You have the core of the system running on ``bender-opt`` and accessible through ``bender-api`` ; and the different clients using this api to give you access to Bender functionalities from anywhere ( ``bender-python-client``, ``bender-web-client``, ``bender-r-client``, ``bender-mathlab-client`` ).

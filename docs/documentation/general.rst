@@ -224,21 +224,21 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
 +---------------+---------------+---------------+---------------+---------------+---------------+
 |               | uniform       | loguniform    | normal        | lognormal     | categorical   |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| mu            | ``FORBIDDEN`` | ``FORBIDDEN`` | **MANDATORY** | **MANDATORY** | ``FORBIDDEN`` |
+| mu            | ``forbidden`` | ``forbidden`` | **mandatory** | **mandatory** | ``forbidden`` |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| sigma         | ``FORBIDDEN`` | ``FORBIDDEN`` | **MANDATORY** | **MANDATORY** | ``FORBIDDEN`` |
+| sigma         | ``forbidden`` | ``forbidden`` | **mandatory** | **mandatory** | ``forbidden`` |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| low           | **MANDATORY** | **MANDATORY** | **MANDATORY** | **MANDATORY** | ``FORBIDDEN`` |
+| low           | **mandatory** | **mandatory** | **mandatory** | **mandatory** | ``forbidden`` |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| high          | **MANDATORY** | **MANDATORY** | **MANDATORY** | **MANDATORY** | ``FORBIDDEN`` |
+| high          | **mandatory** | **mandatory** | **mandatory** | **mandatory** | ``forbidden`` |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| step          |  *AUTHORIZED* |  *AUTHORIZED* |  *AUTHORIZED* |  *AUTHORIZED* | ``FORBIDDEN`` |
+| step          |  *optional*   |  *optional*   |  *optional*   |  *optional*   | ``forbidden`` |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| base          |  *AUTHORIZED* |  *AUTHORIZED* |  *AUTHORIZED* |  *AUTHORIZED* | ``FORBIDDEN`` |
+| base          | ``forbidden`` |  *optional*   | ``forbidden`` |  *optional*   | ``forbidden`` |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| values        | ``FORBIDDEN`` | ``FORBIDDEN`` | ``FORBIDDEN`` | ``FORBIDDEN`` | **MANDATORY** |
+| values        | ``forbidden`` | ``forbidden`` | ``forbidden`` | ``forbidden`` | **mandatory** |
 +---------------+---------------+---------------+---------------+---------------+---------------+
-| probabilities | ``FORBIDDEN`` | ``FORBIDDEN`` | ``FORBIDDEN`` | ``FORBIDDEN`` |  *AUTHORIZED* |
+| probabilities | ``forbidden`` | ``forbidden`` | ``forbidden`` | ``forbidden`` |  *optional*   |
 +---------------+---------------+---------------+---------------+---------------+---------------+
 
 Trial

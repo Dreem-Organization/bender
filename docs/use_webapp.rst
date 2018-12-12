@@ -75,7 +75,7 @@ Here you can see all your different **Algos** ranked by a selected performance m
 
 By clicking a column title you can rearange the ranking depending on this new metric.
 
-By clicking a cell you can display the specific set of hyper parameters used to get this result.
+By clicking a cell you can display the specific set of hyperparameters used to get this result.
 
 To create a new **Algo** just click the green plus sign at the bottom.
 
@@ -94,4 +94,4 @@ The trials board
 
 The final board : two modes depending on the botton you clicked on the **Ranking Board**, line or scatter views.
 
-In both case you can click points on the graph to display the **Trial** associated results and used hyper parameters.
+In both case you can click points on the graph to display the **Trial** associated results and used hyperparameters.

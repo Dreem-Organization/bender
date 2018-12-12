@@ -435,7 +435,7 @@ General methods
 Suggest
 -------
 
-Ask bender a suggestion on a hyper parameters set to use
+Ask bender a suggestion on a hyperparameters set to use
 
 .. code-block:: python
 

@@ -3,9 +3,7 @@ Concepts
 
 With Bender, you create **Algos** within **Experiments**, and ask Bender some **Suggestions** of Hyperparameters to try for these **Algos**, benchmark your algo with these hyperparameters, and then submit the results as a **Trial**.
 
-You can then compare the **Trials** to get the best set of Hyper-Parameters for a given  **Algo** or compare your **Algos** and get the best results possible for your **Experiment** !
-
-Sounds complex ? It isn't ! Take a look below for the vocabulary ;)
+You can then compare the **Trials** to get the best set of Hyper-Parameters for a given  **Algo** or compare your **Algos** and get the best results possible for your **Experiment**!
 
 Experiment
 **********
@@ -38,7 +36,7 @@ Trial
 
 A **Trial** is Bender's food. To train Bender on an Algo you created, he needs data to improve himself.
 
-Each time you try a set of Hyperparameters, you want to make Bender know about it, also giving him a performance indicator associated with this Hyper Parameters set (a loss, an accuracy, etc.).
+Each time you try a set of Hyperparameters, you want to make Bender know about it, also giving him a performance indicator associated with this Hyperparameters set (a loss, an accuracy, etc.).
 
 In short: a **Trial** is a Hyperparameters set associated with a performance metric.
 

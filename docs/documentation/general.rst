@@ -9,33 +9,10 @@ Here is an example of an **Experiment** object
 .. code-block:: json
 
     {
-        "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
-        "algo_name": "sklearn-svm",
-        "comment": "Pretty much nothing",
-        "created": "2018-11-07T17:01:27.292336Z",
-        "experiment": "6616120a-28b2-4c8b-a1c6-7f18c639632c",
-        "id": "d188b0e6-9080-415d-be78-57efe8589a80",
-        "owner": "bender_admin",
-        "parameters": {
-            "C": 0.07699688616826196,
-            "kernel": "poly"
-        },
-        "results": {
-            "test_accuracy": 1,
-            "test_cohen_kappa": 1,
-            "train_accuracy": 0.97,
-            "train_cohen_kappa": 0.9546896239238786
-        },
-        "weight": 1
-    }
-
-.. code-block:: json
-
-    {
         "algo_count": 1,
         "created": "2018-11-20T09:43:43.442381Z",
         "dataset": "Iris_dataset.csv",
-        "dataset_parameters": { "param_1": "somevalue", "param_2": 12 },
+        "dataset_parameters": {"param_1": "somevalue", "param_2": 12},
         "description": "It is just a demo experiment to show you what's inside.",
         "id": "6616120a-28b2-4c8b-a1c6-7f18c639632c",
         "metrics": [
@@ -66,12 +43,12 @@ Here is an example of an **Algo** object
 .. code-block:: json
 
     {
-        "created": "2018-11-07T17:01:27.286194Z",
-        "description": "One of the various possibilities.",
-        "experiment": "6616120a-28b2-4c8b-a1c6-7f18c639632c",
         "id": "0597ca48-66f7-42be-9021-12ec57d4251e",
         "name": "sklearn-svm",
         "owner": "bender_admin",
+        "experiment": "6616120a-28b2-4c8b-a1c6-7f18c639632c",
+        "created": "2018-11-07T17:01:27.286194Z",
+        "description": "One of the various possibilities.",
         "parameters": [
             {
                 "algo": "0597ca48-66f7-42be-9021-12ec57d4251e"
@@ -95,13 +72,13 @@ Here is an example of an **Algo** object
 - **id** : *string* - Id of the algo
 - **name** : *string* - Name of the algo
 - **owner** : *string* - Owner of the algo
-- **parameters**: *array* - An array of hyper parameters (see the hyper parameters section just below)
+- **parameters**: *array* - An array of hyperparameters (see the hyperparameters section just below)
 - **trial_count** : *number* - Number of trials in this 
 
-Hyper parameters
-----------------
+Hyperparameters
+---------------
 
-Here are some examples of **Hyper parameters** objects that can appear in an Algo.
+Here are some examples of **Hyperparameters** objects that can appear in an Algo.
 
 .. code-block:: json
 
@@ -113,7 +90,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "low": 0,
             "high": 10,
         }
-    }
+    }  #  some examples: 8.364, 2.3, 4.5, etc.
 
     {
         "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
@@ -124,7 +101,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "high": 10,
             "step": 1
         }
-    }
+    }  #  some examples: 0, 5, 6, 7, etc.
 
     {
         "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
@@ -135,7 +112,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "high": 1e6,
             "base": 10,
         }
-    }
+    }  #  some examples: 3.14456e4, 5.36412e5, 9.12450e6, etc.
 
     {
         "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
@@ -147,7 +124,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "step": 1e3,
             "base": 10,
         }
-    }
+    }  #  some examples: 3.1e4, 5.36e5, 9.126e6, etc.
 
     {
         "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
@@ -158,7 +135,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "sigma": 4,
             "low": 0,
             "high": 10,
-        }
+        }  #  some examples: 8.3, 7.5, 5.6, 7.9, etc.
     }
 
     {
@@ -172,7 +149,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "high": 10,
             "step": 0.2,
         }
-    }
+    }  #  some examples: 8.2, 8, 7.6, 5.6, etc.
 
     {
         "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
@@ -185,21 +162,7 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
             "high": 1e-3,
             "base": 10,
         }
-    }
-
-    {
-        "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
-        "name": "x4_step",
-        "category": "lognormal",
-        "search_space": {
-            "mu": 1e-5,
-            "sigma": 1e1,
-            "low": 1e-8,
-            "high": 1e-3,
-            "step": 1e-8,
-            "base": 10,
-        }
-    }
+    }  #  some examples: 1.2e-5, 0.3e-6, 7.65e-4 etc.
 
     {
         "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
@@ -207,13 +170,14 @@ Here are some examples of **Hyper parameters** objects that can appear in an Alg
         "category": "categorical",
         "search_space": {
             "values": ["a", "b", "c", "d"],
+            "probabilities": [1 / 3, 1 / 3, 1 / 6, 1 / 6]
         }
-    }
+    }  #  some examples: a, b, a, b, c, etc.
 
 .. role:: red
 
 - **algo**: *string* - Id of the algo
-- **name**: *string* - Name of your hyper parameter
+- **name**: *string* - Name of your hyperparameter
 - **category**: *string*->[*enum*] - One of the following values depending on the type of your variable : ``categorical``, ``uniform``, ``loguniform``, ``normal``, ``lognormal``
 - **search_space**: *dict* - Depending on the value of the 'category' field, the search_space dict can or must contain different keys. To know what to fill, look at the matching table below.
 
@@ -249,12 +213,12 @@ Here is an example of an **Trial** object
 .. code-block:: json
 
     {
-        "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
+        "id": "d188b0e6-9080-415d-be78-57efe8589a80",
         "algo_name": "sklearn-svm",
+        "algo": "0597ca48-66f7-42be-9021-12ec57d4251e",
         "comment": "Pretty much nothing",
         "created": "2018-11-07T17:01:27.292336Z",
         "experiment": "6616120a-28b2-4c8b-a1c6-7f18c639632c",
-        "id": "d188b0e6-9080-415d-be78-57efe8589a80",
         "owner": "bender_admin",
         "parameters": {
             "C": 0.07699688616826196,
@@ -276,6 +240,6 @@ Here is an example of an **Trial** object
 - **experiment** : *string* - Id of the experiment
 - **id** : *string* - Id of the trial
 - **owner** : *string* - Owner of the experiment
-- **parameters** : *dict* - Values of hyper parameters used for this trial
+- **parameters** : *dict* - Values of hyperparameters used for this trial
 - **results** : *dict* - Metric results for this trial.
-- **weight** : *number* - Importance of this trial compared to the others
+- **weight** : *number* - optional Importance of this trial compared to the others (default 1)

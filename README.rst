@@ -20,6 +20,17 @@ Bender Clients Status
 About Bender
 ************
 
-Bender is a Hyper Parameters Optimizer that can be plug to every black box algorithm to improve its performances.
+Bender is a hyperparameters optimizer for black box optimization. It is currently open-access but we plan to open-source all its components.
 
-Bender is composed of different parts. You have the core of the system running on ``bender-opt`` and accessible through ``bender-api`` ; and the different clients using this api to give you access to Bender functionalities from anywhere ( ``bender-python-client``, ``bender-web-client``, ``bender-r-client``, ``bender-mathlab-client`` ).
+It features 3 kind of components:
+
+* ``benderopt`` A custom library implementing 3 kinds of algorithms:
+    - Random Search
+    - Parzen Estimator Optimization (TPE-like)
+    - Model Based Optimization (SMAC-like)
+
+* ``bender-api`` A backend able to store experiments, results and relying on benderopt for suggesting new hyperparameters to try
+
+* Various clients to give you access to Bender functionalities from anywhere:
+    - ``web-client`` available at htttps://bender.dreem.com
+    - ``python-client`` available by pip install bender-client

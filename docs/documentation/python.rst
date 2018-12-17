@@ -379,13 +379,13 @@ Create new trial for the current algo.
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
 | Argument             | Type      | Description and Example                                                                           |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
-| **results**          | *array*   | Array of obtained metrics                                                                         |
+| **results**          | *dict*    | Array of obtained metrics                                                                         |
 +                      +           +---------------------------------------------------------------------------------------------------+
-|                      |           | ``[{ "name": "accuracy", "type": "reward" }, { "name": "loss", "type": "loss" }]``                |
+|                      |           | ``{"metric1": 0.8, "metric2": 0.3}``                |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
-| **hyper_parameters** | *array*   | List of the hyper_parameters used by the algo                                                     |
+| **hyper_parameters** | *dict*    | List of the hyper_parameters used by the algo                                                     |
 +                      +           +---------------------------------------------------------------------------------------------------+
-|                      |           | ``[{"name": "param_name","category": "categorical", "search_space": { "values": [3, 5, 7] } }]``  |
+|                      |           | ``{"param1": "value","param2": 3567, "param3": "another"}``                                       |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
 | **weight**           | *integer* | The importance of your result                                                                     |
 +                      +           +---------------------------------------------------------------------------------------------------+
@@ -443,7 +443,7 @@ Ask bender a suggestion on a hyperparameters set to use
 
 **Prototype :**
 
-``suggest(metric, optimizer="parzen_estimator")``
+``suggest(metric=None, optimizer="parzen_estimator")``
 
 **Arguments :**
 
@@ -463,7 +463,7 @@ Ask bender a suggestion on a hyperparameters set to use
 
 *dict*
 
-``{"name": "param_name","category": "categorical", "search_space": { "values": [3, 5, 7] } }``
+``{"param1": "value","param2": 3567, "param3": "another"}``
 
 Revoke credentials
 ------------------

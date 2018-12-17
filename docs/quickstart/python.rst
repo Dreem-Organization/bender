@@ -9,7 +9,7 @@ Here is a minimal example:
 
 .. code:: python
 
-    """ In this minimum example we try to minimize the sinus function between 0 and 2pi"""
+    """ In this minimal example we try to minimize the sinus function between 0 and 2pi"""
 
     from benderclient import Bender
     import numpy as np

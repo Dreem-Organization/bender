@@ -5,7 +5,7 @@ The **python client for bender** is available with the ``pip install bender-clie
 
 You can find a full tutorial on the github repo of the package at: `github.com/Dreem-Organization/Bender-Client <https://github.com/Dreem-Organization/Bender-Client>`_.
 
-Here is a minimum example:
+Here is a minimal example:
 
 .. code:: python
 

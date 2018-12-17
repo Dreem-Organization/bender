@@ -29,8 +29,9 @@ It features 3 kind of components:
     - Parzen Estimator Optimization (TPE-like)
     - Model Based Optimization (SMAC-like)
 
-- *bender-api*: A backend able to store experiments and results. It relies on benderopt for suggesting new hyperparameters to try.
-    - Test
+- *bender-api*: A high level interface to interact with bender functionalities.
+    - CRUD for experiments, algorithms and trials.
+    - Relies on benderopt for suggesting new hyperparameters to try.
 
 - *Various clients* to give you access to Bender functionalities from anywhere:
     - *web-client* available at ``https://bender.dreem.com``

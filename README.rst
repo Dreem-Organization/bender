@@ -24,13 +24,13 @@ Bender is a hyperparameters optimizer for black box optimization. It is currentl
 
 It features 3 kind of components:
 
-* *benderopt*: A custom library implementing 3 algorithms:
+- *benderopt*: A custom library implementing 3 algorithms:
     - Random Search
     - Parzen Estimator Optimization (TPE-like)
     - Model Based Optimization (SMAC-like)
 
-* *bender-api*: A backend able to store experiments and results. It relies on benderopt for suggesting new hyperparameters to try.
+- *bender-api*: A backend able to store experiments and results. It relies on benderopt for suggesting new hyperparameters to try.
 
-* *Various clients* to give you access to Bender functionalities from anywhere:
+- *Various clients* to give you access to Bender functionalities from anywhere:
     - *web-client* available at ``https://bender.dreem.com``
     - *python-client* available by ``pip install bender-client``

@@ -205,7 +205,7 @@ Return a list of the connected user's algos.
 
 *array*
 
-``[{ "name": "exp_1", "id": "0597ca48-6..." }, { "name": "exp_2", "id": "68hj547r5-8..." } ]``
+``[{ "name": "algo_1", "id": "0597ca48-6..." }, { "name": "algo_2", "id": "68hj547r5-8..." } ]``
 
 Set algo
 --------
@@ -251,7 +251,7 @@ Create new algo and setup current algo for the connected user.
 
 **Prototype :**
 
-``create_algo(name, hyper_parameters, description=None)``
+``create_algo(name, hyperparameters, description=None)``
 
 **Arguments :**
 
@@ -262,7 +262,7 @@ Create new algo and setup current algo for the connected user.
 +                      +          +---------------------------------------------------------------------------------------------------+
 |                      |          | ``"my_algo"``                                                                                     |
 +----------------------+----------+---------------------------------------------------------------------------------------------------+
-| **hyper_parameters** | *array*  | List of the hyper_parameters used by the algo                                                     |
+| **hyperparameters**  | *array*  | List of the hyperparameters used by the algo                                                      |
 +                      +          +---------------------------------------------------------------------------------------------------+
 |                      |          | ``[{"name": "param_name","category": "categorical", "search_space": { "values": [3, 5, 7] } }]``  |
 +----------------------+----------+---------------------------------------------------------------------------------------------------+
@@ -360,11 +360,11 @@ Create new trial for the current algo.
 
 .. code-block:: python
 
-    b.create_trial(name, hyper_parameters, description)
+    b.create_trial(name, hyperparameters, description)
 
 **Prototype :**
 
-``create_trial(results, hyper_parameters, weight=1, comment=None)``
+``create_trial(results, hyperparameters, weight=1, comment=None)``
 
 **Arguments :**
 
@@ -375,7 +375,7 @@ Create new trial for the current algo.
 +                      +           +---------------------------------------------------------------------------------------------------+
 |                      |           | ``{"metric1": 0.8, "metric2": 0.3}``                                                              |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
-| **hyper_parameters** | *dict*    | List of the hyper_parameters used by the algo                                                     |
+| **hyperparameters**  | *dict*    | List of the hyperparameters used by the algo                                                      |
 +                      +           +---------------------------------------------------------------------------------------------------+
 |                      |           | ``{"param1": "value","param2": 3567, "param3": "another"}``                                       |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+

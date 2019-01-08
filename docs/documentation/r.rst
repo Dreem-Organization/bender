@@ -8,7 +8,7 @@ Install
 
 The **r client for bender** is available with the ``devtools::install_github("Dreem-Organization/bender-r-client")`` command.
 
-Import and Login
+Initialization and Login
 ****************
 
 **Make sure you already created a Bender account on** `the web client <https://bender.dreem.com/>`_ !
@@ -54,13 +54,13 @@ Set experiment
 
 Setup current experiment for the connected user.
 
-.. code-block:: python
+.. code-block:: r
 
-    b.set_experiment(name, experiment_id)
+    b$set_experiment(name, id)
 
 **Prototype :**
 
-``set_experiment(name=None, experiment_id=None)``
+``set_experiment(name=NULL, id=NULL)``
 
 **Arguments :**
 
@@ -71,7 +71,7 @@ Setup current experiment for the connected user.
 +                   +          +-------------------------------------------------------------------------+
 |                   |          | ``"my_experiment"``                                                     |
 +-------------------+----------+-------------------------------------------------------------------------+
-| **experiment_id** | *string* | Give the id of the experiment you want to retrieve and set as current   |
+| **id**            | *string* | Give the id of the experiment you want to retrieve and set as current   |
 +                   +          +-------------------------------------------------------------------------+
 |                   |          | ``"0597ca48-66f7-42be-9021-12ec57d4251e"``                              |
 +-------------------+----------+-------------------------------------------------------------------------+
@@ -89,11 +89,11 @@ Create new experiment and setup current experiment for the connected user.
 
 .. code-block:: python
 
-    b.create_experiment(name, metrics, description, dataset, dataset_parameters)
+    b$create_experiment(name, metrics, description, dataset, dataset_parameters)
 
 **Prototype :**
 
-``create_experiment(name, metrics, description=None, dataset=None, dataset_parameters=None)``
+``create_experiment(name, metrics, description=NULL, dataset=NULL, dataset_parameters=NULL)``
 
 **Arguments :**
 
@@ -104,9 +104,9 @@ Create new experiment and setup current experiment for the connected user.
 +                 +          +---------------------------------------------------------------------------------------------------+
 |                 |          | ``"my_experiment"``                                                                               |
 +-----------------+----------+---------------------------------------------------------------------------------------------------+
-| **metrics**     | *array*  | List of the performance metrics used to evaluate your experiment                                  |
+| **metrics**     | *list*   | List of the performance metrics used to evaluate your experiment                                  |
 +                 +          +---------------------------------------------------------------------------------------------------+
-|                 |          | ``[ {"metric_name": "metric_a","type": "reward" }, {"metric_name": "metric_b","type": "loss" }]`` |
+|                 |          | ``list(list(metric_name="metric_a", type="reward" ), list(metric_name="metric_b", type="loss"))`` |
 +-----------------+----------+---------------------------------------------------------------------------------------------------+
 | **description** | *string* | Short description of the experiment's purpose                                                     |
 +                 +          +---------------------------------------------------------------------------------------------------+
@@ -116,61 +116,34 @@ Create new experiment and setup current experiment for the connected user.
 +                 +          +---------------------------------------------------------------------------------------------------+
 |                 |          | ``"dataset_name.csv"``                                                                            |
 +-----------------+----------+---------------------------------------------------------------------------------------------------+
-| **dataset**     | *dict*   | An object describing your dataset                                                                 |
+| **dataset**     | *list*   | An object describing your dataset                                                                 |
 +                 +          +---------------------------------------------------------------------------------------------------+
-|                 |          | ``{ "version": 0.1, "CV_folds": "10" }``                                                          |
+|                 |          | ``list(version=0.1, CV_folds="10")``                                                              |
 +-----------------+----------+---------------------------------------------------------------------------------------------------+
 
 **Return :**
 
 *none*
 
-Get experiment
---------------
-
-Return the current experiment.
-
-.. code-block:: python
-
-    b.get_experiment()
-
-**Prototype :**
-
-``get_experiment()``
-
-**Arguments :**
-
-*none*
-
-**Return :**
-
-*dict*
-
-A full experiment object.
-
 Delete experiment
 -----------------
 
 Delete targeted experiment of the connected user.
 
-.. code-block:: python
+.. code-block:: r
 
-    b.delete_experiment(name, experiment_id)
+    b$delete_experiment(id)
 
 **Prototype :**
 
-``delete_experiment(name=None, experiment_id=None)``
+``delete_experiment(id=NULL)``
 
 **Arguments :**
 
 +-------------------+----------+-------------------------------------------------------------------------+
 | Argument          | Type     | Description and Example                                                 |
 +-------------------+----------+-------------------------------------------------------------------------+
-| **name**          | *string* | Give the name of the experiment you want to retrieve and delete         |
-+                   +          +-------------------------------------------------------------------------+
-|                   |          | ``"my_experiment"``                                                     |
-+-------------------+----------+-------------------------------------------------------------------------+
-| **experiment_id** | *string* | Give the id of the experiment you want to retrieve and delete           |
+| **id**            | *string* | Give the id of the experiment you want to retrieve and delete           |
 +                   +          +-------------------------------------------------------------------------+
 |                   |          | ``"0597ca48-66f7-42be-9021-12ec57d4251e"``                              |
 +-------------------+----------+-------------------------------------------------------------------------+
@@ -188,11 +161,11 @@ Algo methods
 List algos
 ----------
 
-List current experiment for the connected user.
+Return a list of the connected user's algos.
 
 .. code-block:: python
 
-    b.list_algos()
+    b$list_algos()
 
 **Prototype :**
 
@@ -204,9 +177,9 @@ List current experiment for the connected user.
 
 **Return :**
 
-*array*
+*list*
 
-``[{ "name": "exp_1", "id": "0597ca48-6..." }, { "name": "exp_2", "id": "68hj547r5-8..." } ]``
+``list(list(name="algo_1", id="0597ca48-6..."), list(name="algo_2", id="68hj547r5-6..."))``
 
 Set algo
 --------
@@ -215,11 +188,11 @@ Setup current algo for the connected user.
 
 .. code-block:: python
 
-    b.set_algo(name, algo_id)
+    b$set_algo(name, id)
 
 **Prototype :**
 
-``set_algo(name=None, algo_id=None)``
+``set_algo(name=NULL, id=NULL)``
 
 **Arguments :**
 
@@ -230,7 +203,7 @@ Setup current algo for the connected user.
 +                   +          +-------------------------------------------------------------------------+
 |                   |          | ``"my_algo"``                                                           |
 +-------------------+----------+-------------------------------------------------------------------------+
-| **algo_id**       | *string* | Give the id of the algo you want to retrieve and set as current         |
+| **id**            | *string* | Give the id of the algo you want to retrieve and set as current         |
 +                   +          +-------------------------------------------------------------------------+
 |                   |          | ``"0597ca48-66f7-42be-9021-12ec57d4251e"``                              |
 +-------------------+----------+-------------------------------------------------------------------------+
@@ -248,11 +221,11 @@ Create new algo and setup current algo for the connected user.
 
 .. code-block:: python
 
-    b.create_algo(name, parameters, description)
+    b$create_algo(name, hyperparameters, description)
 
 **Prototype :**
 
-``create_algo(name, hyper_parameters, description=None)``
+``create_algo(name, hyperparameters, description=NULL)``
 
 **Arguments :**
 
@@ -263,9 +236,9 @@ Create new algo and setup current algo for the connected user.
 +                      +          +---------------------------------------------------------------------------------------------------+
 |                      |          | ``"my_algo"``                                                                                     |
 +----------------------+----------+---------------------------------------------------------------------------------------------------+
-| **hyper_parameters** | *array*  | List of the hyper_parameters used by the algo                                                     |
+| **hyperparameters**  | *list*   | List of the hyperparameters used by the algo                                                      |
 +                      +          +---------------------------------------------------------------------------------------------------+
-|                      |          | ``[{"name": "param_name","category": "categorical", "search_space": { "values": [3, 5, 7] } }]``  |
+|                      |          | ``list(list(name="param_name",category="categorical",search_space=list(values=list(3, 5, 7))))``  |
 +----------------------+----------+---------------------------------------------------------------------------------------------------+
 | **description**      | *string* | Short description of the algo's principle                                                         |
 +                      +          +---------------------------------------------------------------------------------------------------+
@@ -276,29 +249,6 @@ Create new algo and setup current algo for the connected user.
 
 *none*
 
-Get algo
---------
-
-Return the current algo.
-
-.. code-block:: python
-
-    b.get_algo()
-
-**Prototype :**
-
-``get_algo()``
-
-**Arguments :**
-
-*none*
-
-**Return :**
-
-*dict*
-
-A full algo object.
-
 Delete algo
 -----------
 
@@ -306,20 +256,16 @@ Delete targeted algo of the connected user.
 
 .. code-block:: python
 
-    b.delete_algo(name, algo_id)
+    b.delete_algo(algo_id)
 
 **Prototype :**
 
-``delete_algo(name=None, algo_id=None)``
+``delete_algo(algo_id=NULL)``
 
 **Arguments :**
 
 +-------------------+----------+-------------------------------------------------------------------------+
 | Argument          | Type     | Description and Example                                                 |
-+-------------------+----------+-------------------------------------------------------------------------+
-| **name**          | *string* | Give the name of the algo you want to retrieve and delete               |
-+                   +          +-------------------------------------------------------------------------+
-|                   |          | ``"my_algo"``                                                           |
 +-------------------+----------+-------------------------------------------------------------------------+
 | **algo_id**       | *string* | Give the id of the algo you want to retrieve and delete                 |
 +                   +          +-------------------------------------------------------------------------+
@@ -342,7 +288,7 @@ List all trials of the current algo.
 
 .. code-block:: python
 
-    b.list_trials()
+    b$list_trials()
 
 **Prototype :**
 
@@ -354,9 +300,9 @@ List all trials of the current algo.
 
 **Return :**
 
-*array*
+*list*
 
-An array of trials dict.
+A list of trials.
 
 Create trial
 ------------
@@ -365,24 +311,24 @@ Create new trial for the current algo.
 
 .. code-block:: python
 
-    b.create_trial(name, hyper_parameters, description)
+    b$create_trial(name, hyperparameters, description)
 
 **Prototype :**
 
-``create_trial(results, hyper_parameters, weight=1, comment=None)``
+``create_trial(results, hyperparameters, weight=1, comment=NULL)``
 
 **Arguments :**
 
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
 | Argument             | Type      | Description and Example                                                                           |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
-| **results**          | *dict*    | Array of obtained metrics                                                                         |
+| **results**          | *list*    | Array of obtained metrics                                                                         |
 +                      +           +---------------------------------------------------------------------------------------------------+
-|                      |           | ``{"metric1": 0.8, "metric2": 0.3}``                                                              |
+|                      |           | ``list(metric1=0.8, metric2=0.3)``                                                                |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
-| **hyper_parameters** | *dict*    | List of the hyper_parameters used by the algo                                                     |
+| **hyperparameters**  | *list*    | List of the hyperparameters used by the algo                                                      |
 +                      +           +---------------------------------------------------------------------------------------------------+
-|                      |           | ``{"param1": "value","param2": 3567, "param3": "another"}``                                       |
+|                      |           | ``list(param1="value", param2=3567, param3="another"}``                                           |
 +----------------------+-----------+---------------------------------------------------------------------------------------------------+
 | **weight**           | *integer* | The importance of your result                                                                     |
 +                      +           +---------------------------------------------------------------------------------------------------+
@@ -404,18 +350,18 @@ Delete targeted trial from current algo.
 
 .. code-block:: python
 
-    b.delete_trial(name, trial_id)
+    b$delete_trial(trial_id)
 
 **Prototype :**
 
-``delete_trial(trial_id=None)``
+``delete_trial(id=NULL)``
 
 **Arguments :**
 
 +-------------------+----------+-------------------------------------------------------------------------+
 | Argument          | Type     | Description and Example                                                 |
 +-------------------+----------+-------------------------------------------------------------------------+
-| **trial_id**      | *string* | Give the id of the trial you want to retrieve and delete                |
+| **id**            | *string* | Give the id of the trial you want to retrieve and delete                |
 +                   +          +-------------------------------------------------------------------------+
 |                   |          | ``"0597ca48-66f7-42be-9021-12ec57d4251e"``                              |
 +-------------------+----------+-------------------------------------------------------------------------+
@@ -436,11 +382,11 @@ Ask bender a suggestion on a hyperparameters set to use
 
 .. code-block:: python
 
-    b.suggest(metric, optimizer)
+    b$suggest(metric, optimizer)
 
 **Prototype :**
 
-``suggest(metric=None, optimizer="parzen_estimator")``
+``suggest(metric=NULL, optimizer="parzen_estimator")``
 
 **Arguments :**
 
@@ -458,22 +404,6 @@ Ask bender a suggestion on a hyperparameters set to use
 
 **Return :**
 
-*dict*
+*list*
 
-``{"param1": "value","param2": 3567, "param3": "another"}``
-
-Revoke credentials
-------------------
-
-Remove the registered credentials from this computer
-
-.. code-block:: python
-
-    b.revoke_credentials()
-
-Hello
------
-
-.. code-block:: python
-
-    b._say_hello()
+``list(param1="value", param2=3567, param3="another")``

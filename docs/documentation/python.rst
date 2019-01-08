@@ -158,20 +158,16 @@ Delete targeted experiment of the connected user.
 
 .. code-block:: python
 
-    b.delete_experiment(name, experiment_id)
+    b.delete_experiment(experiment_id)
 
 **Prototype :**
 
-``delete_experiment(name=None, experiment_id=None)``
+``delete_experiment(experiment_id=None)``
 
 **Arguments :**
 
 +-------------------+----------+-------------------------------------------------------------------------+
 | Argument          | Type     | Description and Example                                                 |
-+-------------------+----------+-------------------------------------------------------------------------+
-| **name**          | *string* | Give the name of the experiment you want to retrieve and delete         |
-+                   +          +-------------------------------------------------------------------------+
-|                   |          | ``"my_experiment"``                                                     |
 +-------------------+----------+-------------------------------------------------------------------------+
 | **experiment_id** | *string* | Give the id of the experiment you want to retrieve and delete           |
 +                   +          +-------------------------------------------------------------------------+
@@ -191,7 +187,7 @@ Algo methods
 List algos
 ----------
 
-List current experiment for the connected user.
+Return a list of the connected user's algos.
 
 .. code-block:: python
 
@@ -309,20 +305,16 @@ Delete targeted algo of the connected user.
 
 .. code-block:: python
 
-    b.delete_algo(name, algo_id)
+    b.delete_algo(algo_id)
 
 **Prototype :**
 
-``delete_algo(name=None, algo_id=None)``
+``delete_algo(algo_id=None)``
 
 **Arguments :**
 
 +-------------------+----------+-------------------------------------------------------------------------+
 | Argument          | Type     | Description and Example                                                 |
-+-------------------+----------+-------------------------------------------------------------------------+
-| **name**          | *string* | Give the name of the algo you want to retrieve and delete               |
-+                   +          +-------------------------------------------------------------------------+
-|                   |          | ``"my_algo"``                                                           |
 +-------------------+----------+-------------------------------------------------------------------------+
 | **algo_id**       | *string* | Give the id of the algo you want to retrieve and delete                 |
 +                   +          +-------------------------------------------------------------------------+
@@ -407,7 +399,7 @@ Delete targeted trial from current algo.
 
 .. code-block:: python
 
-    b.delete_trial(name, trial_id)
+    b.delete_trial(trial_id)
 
 **Prototype :**
 

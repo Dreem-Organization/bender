@@ -36,3 +36,9 @@ It features 3 kind of components:
 - *Various clients* to give you access to Bender functionalities from anywhere:
     - *web-client* available at ``https://bender.dreem.com``
     - *python-client* available by ``pip install bender-client``
+
+.. image:: https://static.rythm.co/bender/workflow_diagram_api_web_client.jpg
+   :alt: API - WEB CLIENT
+
+.. image:: https://static.rythm.co/bender/workflow_diagram_api_other_client.jpg
+   :alt: API - OTHER CLIENTS

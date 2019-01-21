@@ -12,4 +12,4 @@ Install postman `by clicking here. <https://www.getpostman.com/downloads/>`_
 
 Import our collection following `these steps. <https://learning.getpostman.com/docs/postman/collections/data_formats/#exporting-and-importing-postman-data>`_
 
-Get the postman json file you need to import `over here. <>`_
+Get the postman json file you need to import `over here. <https://github.com/Dreem-Organization/bender/blob/master/docs/annex/Bender%20Optimizer.postman_collection.json>`_

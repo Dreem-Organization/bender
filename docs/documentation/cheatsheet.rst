@@ -243,3 +243,12 @@ Here is an example of an **Trial** object
 - **parameters** : *dict* - Values of hyperparameters used for this trial
 - **results** : *dict* - Metric results for this trial.
 - **weight** : *number* - optional Importance of this trial compared to the others (default 1)
+
+Suggestions
+-----------
+
+The currently supported optimizers are :
+
+``parzen_estimator``
+
+``random``

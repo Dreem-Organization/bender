@@ -1,0 +1,672 @@
+{
+	"info": {
+		"_postman_id": "aae121d7-3c2a-4b51-a6fc-19eb4b63027f",
+		"name": "Bender Optimizer",
+		"description": "This is an API documentation for Bender.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb79ee26-d937-4629-a3b0-8e56c9986ecc",
+						"exec": [
+							"if (JSON.parse(responseBody).token) {",
+							"    pm.globals.set(\"token\", JSON.parse(responseBody).token);",
+							"    pm.globals.set(\"user\", JSON.parse(responseBody).user.username);",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c9864615-4bd2-4356-99ed-869ce63bbdaf",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}/login/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE EXPERIMENT",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"my_experiment_name\",\n\t\"description\": \"my_experiment_description\",\n\t\"metrics\": [{\"metric_name\": \"metric_a\",\"type\": \"reward\" }, {\"metric_name\": \"metric_b\",\"type\": \"loss\" }],\n\t\"dataset\": \"my_dataset_name\",\n\t\"dataset_parameters\": { \"version\": 0.1, \"anything\": \"I_want\" }\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}/api/experiments/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"experiments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST EXPERIMENTS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/experiments/?owner={{user}}",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"experiments",
+						""
+					],
+					"query": [
+						{
+							"key": "owner",
+							"value": "{{user}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET EXPERIMENT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/experiments/e0a1c447-f7d9-43e3-8b8e-53aa2806db8d/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"experiments",
+						"e0a1c447-f7d9-43e3-8b8e-53aa2806db8d",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE EXPERIMENT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/experiments/fb2c7cb6-c1d9-4b4f-8547-9064485673aa/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"experiments",
+						"fb2c7cb6-c1d9-4b4f-8547-9064485673aa",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE ALGO",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"my_algo_name\",\n    \"description\": \"my_algo_description\",\n    \"parameters\": [{\"name\": \"param_name\",\"category\": \"categorical\", \"search_space\": { \"values\": [3, 5, 7] } }],\n    \"experiment\": \"e0a1c447-f7d9-43e3-8b8e-53aa2806db8d\"\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}/api/algos/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"algos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET SUGGESTION",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"metric\": \"metric_a\",\n    \"optimizer\": \"parzen_estimator\"\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}/api/algos/1221bd9c-634a-4257-9419-dce9fd7581ec/suggest/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"algos",
+						"1221bd9c-634a-4257-9419-dce9fd7581ec",
+						"suggest",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST ALGOS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/algos/?experiment=e0a1c447-f7d9-43e3-8b8e-53aa2806db8d",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"algos",
+						""
+					],
+					"query": [
+						{
+							"key": "experiment",
+							"value": "e0a1c447-f7d9-43e3-8b8e-53aa2806db8d"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALGO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/algos/1221bd9c-634a-4257-9419-dce9fd7581ec/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"algos",
+						"1221bd9c-634a-4257-9419-dce9fd7581ec",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ALGO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/algo/1221bd9c-634a-4257-9419-dce9fd7581ec/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"algo",
+						"1221bd9c-634a-4257-9419-dce9fd7581ec",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE TRIAL",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"algo\": \"1221bd9c-634a-4257-9419-dce9fd7581ec\",\n    \"description\": \"my_algo_description\",\n    \"parameters\": {\"param_name\": 3},\n    \"results\": {\"metric_a\": 0.8, \"metric_b\": 0.3},\n    \"comment\": \"anything_you_want_to_say\",\n    \"weight\": 1\n}"
+				},
+				"url": {
+					"raw": "{{hostname}}/api/trials/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"trials",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST TRIALS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/trials/?algo=1221bd9c-634a-4257-9419-dce9fd7581ec",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"trials",
+						""
+					],
+					"query": [
+						{
+							"key": "algo",
+							"value": "1221bd9c-634a-4257-9419-dce9fd7581ec"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET TRIAL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/trials/adf5bf14-0fb1-4e96-8e37-ddd4e5c8f44b/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"trials",
+						"adf5bf14-0fb1-4e96-8e37-ddd4e5c8f44b",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TRIAL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f9af8a-a87a-451b-b2b4-0bb116c86f31",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{hostname}}/api/trial/adf5bf14-0fb1-4e96-8e37-ddd4e5c8f44b/",
+					"host": [
+						"{{hostname}}"
+					],
+					"path": [
+						"api",
+						"trial",
+						"adf5bf14-0fb1-4e96-8e37-ddd4e5c8f44b",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "69445e96-1fcd-487f-bb07-c7aa80ef366f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "978723b0-7bb1-4b3a-959a-4b917cf3b4a4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "8a468083-13e7-41bc-bbde-6f924e116f4c",
+			"key": "hostname",
+			"value": "https://bender-api.dreem.com",
+			"type": "string"
+		},
+		{
+			"id": "53a65c39-ea80-4813-9c16-2553d612bca9",
+			"key": "email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "6a97a7bf-8798-4067-aa07-8b42dc1752a6",
+			"key": "password",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

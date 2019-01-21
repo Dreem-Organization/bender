@@ -21,6 +21,7 @@ Table Of Content
     :maxdepth: 2
     :caption: Documentation
 
-    documentation/general
+    documentation/api
+    documentation/cheatsheet
     documentation/python
     documentation/r

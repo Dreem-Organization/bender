@@ -1,7 +1,7 @@
 Python
 ######
 
-**PLEASE READ THE 'GENERAL' DOCUMENTATION TAB FIRST IF IT'S YOUR FIRST TIME USING THE CLIENT**
+**PLEASE READ THE 'CONCEPTS' DOCUMENTATION TAB FIRST IF IT'S YOUR FIRST TIME USING THE CLIENT**
 
 Install
 *******
@@ -448,7 +448,7 @@ Ask bender a suggestion on a hyperparameters set to use
 +-------------------+----------+-------------------------------------------------------------------------+
 | **optimizer**     | *string* |                                                                         |
 +                   +          +-------------------------------------------------------------------------+
-|                   |          | ``"parzen_estimator"``                                                  |
+|                   |          | ``"parzen_estimator" || "random"``                                                  |
 +-------------------+----------+-------------------------------------------------------------------------+
 
 **Return :**

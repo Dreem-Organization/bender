@@ -15,6 +15,7 @@ Table Of Content
     :maxdepth: 2
     :caption: Quickstart guides
 
+    quickstart/api
     quickstart/python
 
 .. toctree::

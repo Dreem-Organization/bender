@@ -7,7 +7,9 @@ Base route
 **********
 
 All routes starts with the following base : ``http://bender-api.dreem.com``
+
 The Api is using JWT authentication so don't forget to sent the token in your request headers (You can get it with the login route).
+
 **Make sure you already created a Bender account on** `the web client <https://bender.dreem.com/>`_ !
 
 Login
@@ -16,6 +18,7 @@ Login
 **POST** ``/api/login``
 
 **Body**
+
 .. code-block:: json
 
     {
@@ -24,6 +27,7 @@ Login
     }
 
 **Return**
+
 .. code-block:: json
 
     {
@@ -46,8 +50,6 @@ List experiments
 ----------------
 
 **GET** ``/api/experiments/?owner=<username_of_your_account>``
-
-Return a list of the connected user's experiments.
 
 .. code-block:: python
 

@@ -1,0 +1,14 @@
+{
+    "benderWebClient": {
+        "localhostPort": 3000
+    },
+    "benderApi": {
+        
+    },
+    "benderDatabase": {
+        "username": "superuser",
+        "email": "superuser@bender.com",
+        "password": "superuser",
+        "databasePath": "./local/bender-database"
+    }
+}

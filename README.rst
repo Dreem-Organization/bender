@@ -42,3 +42,37 @@ It features 3 kind of components:
 
 .. image:: https://static.rythm.co/bender/workflow_diagram_api_other_client@large.jpg
    :alt: API - OTHER CLIENTS
+
+
+Use bender locally
+******************
+
+If you don't want to use our online services, you still have the option to run bender locally.
+
+**Prerequisites**: git, docker
+
+To do so, first clone, fork, or download this repository, and from its root run the following command lines :
+
+(**WARNING**: *This will be done with default settings, to change the installation and initialisation settings please scroll to the next header*) 
+
+``make install`` : To download all the ressources needed and install all bender dependencies into ./local
+
+``make build`` : To build the different dependencies.
+
+``make start`` : To run the database, the API and the frontend.
+
+``make`` : Tu do the 3 above commands at the same time.
+
+``make stop`` : To stop all bender services.
+
+``make clear`` : To remove all bender services, source files, images and containers.
+
+
+*To use the different clients with the local API check the its specific documentation*.
+
+Configure bender locally
+************************
+
+Bender will use the configuration file in ``.benderconf``.
+
+It is defined in JSON syntax and has the following attributes :

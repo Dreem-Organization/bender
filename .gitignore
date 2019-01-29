@@ -2,7 +2,6 @@
 __pycache__/
 *.py[cod]
 local_data
-.benderconf
 .DS_Store
 .vscode
 
@@ -13,6 +12,7 @@ local_data
 # Distribution / packaging
 .Python
 env/
+local/
 build/
 develop-eggs/
 dist/

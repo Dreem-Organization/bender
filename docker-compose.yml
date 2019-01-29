@@ -1,0 +1,42 @@
+version: '3.5'
+services:
+  bender-web-client:
+    container_name: bender-web-client
+    build:
+      context: ./local/bender-web-client
+      args:
+        BUILD_MODE: "build:packaged"
+    ports:
+      - "${WEB_CLIENT_PORT:-3000}:8000"
+    networks:
+      - bender-network
+  bender-database:
+    image: "postgres:9.6"
+    container_name: bender-database
+    ports:
+      - "5432:5432"
+    networks:
+      - bender-network
+    environment:
+      - POSTGRES_USER=dev
+      - POSTGRES_PASSWORD=dev
+    volumes:
+      - ${DATABASE_PATH}:/var/lib/postgresql/data
+  bender-api:
+    container_name: bender-api
+    depends_on:
+      - bender-database
+    build: ./local/bender-api
+    ports:
+      - "8000:8000"
+    networks:
+      - bender-network
+    environment:
+      - DJANGO_SETTINGS_MODULE=bender_service.settings.development
+    volumes:
+      - ./local/bender-api/bender_service:/usr/src/app
+    command: bash /run_packaged.sh ${USERNAME} ${EMAIL} ${PASSWORD}
+
+networks:
+  bender-network:
+    driver: bridge

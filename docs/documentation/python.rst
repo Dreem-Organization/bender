@@ -24,6 +24,8 @@ When you create a new bender object, it will automatically try to connect to the
 
 The log-in menu will be prompt in the python console and ask for your email and password : it will create a temporary file on your computer with your credentials so you won't have to login each time.
 
+When running the Bender ecosystem, you want to use your own API, so when calling **b = Bender(host='https://bender-api.dreem.com')** you can set a host parameter which is by default set to the adress of our servers.
+
 ******************
 
 Experiment methods

@@ -29,10 +29,10 @@ install:
 	-@mkdir -p ./local/bender-database;
 	@echo "${_OK} => Downloading Bender dependencies...${_END}"
 ifeq ($(wildcard ./local/bender-web-client/.*),)
-	-@git clone -q -b dev https://github.com/Dreem-Organization/bender-web-client.git ./local/bender-web-client;
+	-@git clone -q https://github.com/Dreem-Organization/bender-web-client.git ./local/bender-web-client;
 endif
 ifeq ($(wildcard ./local/bender-api/.*),)
-	-@git clone -q -b open-sourcing https://github.com/Dreem-Organization/bender-back.git ./local/bender-api;
+	-@git clone -q https://github.com/Dreem-Organization/bender-api.git ./local/bender-api;
 endif
 	@echo "${_CYAN}======== FINISHED INSTALL PROCESS ========${_END}"
 

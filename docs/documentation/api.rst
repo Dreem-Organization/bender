@@ -6,7 +6,7 @@ API
 Base route
 **********
 
-All routes starts with the following base : ``https://bender-api.dreem.com``
+All routes starts with the following base : ``https://bender-api.dreem.com`` (of your own API address if you are running Bender yourself)
 
 The Api is using JWT authentication so don't forget to sent the token in your request headers (You can get it with the login route).
 

@@ -15,11 +15,13 @@ Initialization and Login
 
 .. code-block:: r
 
-    b = bender::Bender$new("my_email", "my_password")
+    b = bender::Bender$new("my_email", "my_password", host='https://bender-api.dreem.com')
 
 When you create a new bender object, it will automatically try to connect to the bender API so make sure you have a working internet connection.
 
 The email and password are the one you use to log into bender.dreem.com
+
+When running the Bender ecosystem, you want to use your own API, so when initializing the bender object you can set a host parameter which is by default set to the adress of our servers.
 
 ******************
 

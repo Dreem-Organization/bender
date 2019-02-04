@@ -10,7 +10,7 @@ R
 Install
 *******
 
-The **r client for bender** is available with the `CRAN <https://cran.r-project.org/web/packages/bender/index.html/>`_
+The **r client for bender** is available with the `CRAN <https://cran.r-project.org/web/packages/bender>`_
 
 Or with the following command within R-Studio ``devtools::install_github("Dreem-Organization/bender-r-client")``
 

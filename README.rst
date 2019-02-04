@@ -7,15 +7,18 @@ Bender Clients Status
 .. image:: https://img.shields.io/badge/web-up-green.svg?colorA=555555&colorB=97C901&logo=react&logoColor=DDDDDD&style=for-the-badge
    :target: https://bender.dreem.com/
    :alt: Bender Web Client
+.. image:: https://img.shields.io/badge/api-up-green.svg?colorA=555555&colorB=97C901&logo=salesforce&logoColor=DDDDDD&style=for-the-badge
+   :target: https://bender-optimizer.readthedocs.io/en/latest/documentation/api.html
+   :alt: Bender Web Client
 .. image:: https://img.shields.io/pypi/v/bender-client.svg?label=python&colorA=555555&colorB=97C901&logo=python&logoColor=DDDDDD&style=for-the-badge
    :target: https://pypi.python.org/pypi/bender-client
    :alt: Bender Python Client
-.. image:: https://img.shields.io/badge/r-wip-red.svg?colorA=555555&logo=r&logoColor=DDDDDD&style=for-the-badge
-   :target: https://bender.dreem.com/
+.. image:: https://img.shields.io/badge/r-V0.1.1-green.svg?colorA=555555&logo=r&logoColor=DDDDDD&style=for-the-badge
+   :target: https://cran.r-project.org/web/packages/bender/index.html
    :alt: Bender R Client
-.. image:: https://img.shields.io/badge/matlab-wip-red.svg?colorA=555555&logo=codeforces&logoColor=DDDDDD&style=for-the-badge
-   :target: https://bender.dreem.com/
-   :alt: Bender Mathlab Client
+.. image:: https://img.shields.io/badge/benderopt-open%20source-green.svg?colorA=555555&colorB=97C901&logo=github&logoColor=DDDDDD&style=for-the-badge
+   :target: https://github.com/Dreem-Organization/benderopt
+   :alt: Benderopt Lib
 
 About Bender
 ************

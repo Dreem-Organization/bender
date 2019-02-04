@@ -1,6 +1,10 @@
 API
 ######
 
+.. image:: https://img.shields.io/badge/click%20to%20see%20the%20repo-open%20source-green.svg?colorA=555555&colorB=97C901&logo=github&logoColor=DDDDDD&style=for-the-badge
+   :target: https://github.com/Dreem-Organization/bender-api
+   :alt: Bender API
+
 **PLEASE READ THE 'CONCEPTS' DOCUMENTATION TAB FIRST IF IT'S YOUR FIRST TIME USING THE API**
 
 Base route

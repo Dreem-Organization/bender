@@ -1,12 +1,18 @@
 R
 ######
 
+.. image:: https://img.shields.io/badge/click%20to%20see%20the%20repo-open%20source-green.svg?colorA=555555&colorB=97C901&logo=github&logoColor=DDDDDD&style=for-the-badge
+   :target: https://github.com/Dreem-Organization/bender-r-client
+   :alt: Bender R Client
+
 **PLEASE READ THE 'CONCEPTS' DOCUMENTATION TAB FIRST IF IT'S YOUR FIRST TIME USING THE CLIENT**
 
 Install
 *******
 
-The **r client for bender** is available with the ``devtools::install_github("Dreem-Organization/bender-r-client")`` command.
+The **r client for bender** is available with the `CRAN <https://cran.r-project.org/web/packages/bender/index.html/>`_
+
+Or with the following command within R-Studio ``devtools::install_github("Dreem-Organization/bender-r-client")``
 
 Initialization and Login
 ****************

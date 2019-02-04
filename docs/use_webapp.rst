@@ -1,6 +1,10 @@
 Use the web client
 ##################
 
+.. image:: https://img.shields.io/badge/click%20to%20see%20the%20repo-open%20source-green.svg?colorA=555555&colorB=97C901&logo=github&logoColor=DDDDDD&style=for-the-badge
+   :target: https://github.com/Dreem-Organization/bender-web-client
+   :alt: Bender Web Client
+
 The `web client <https://bender.dreem.com/>`_ is here to make you life easier. Use it.
 
 It's the only client that you can use to compare all your **Trials** and all your **Algos** by visualizing them on graphs and ranking boards.

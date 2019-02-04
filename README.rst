@@ -75,4 +75,22 @@ Configure bender locally
 
 Bender will use the configuration file in ``.benderconf``.
 
-It is defined in JSON syntax and has the following attributes :
+It is defined in JSON syntax and looks like the following :
+
+.. code-block:: json
+
+    {
+        "benderWebClient": {
+            "localhostPort": <the port you want to use on localhost to expose the web-client>
+        },
+        "benderApi": {
+            "localhostPort": <the port you want to use on localhost to expose the api>
+        },
+        "benderDatabase": {
+            "username": <the username of the admin acount to create in the database>,
+            "email": <the email of the admin acount to create in the database>,
+            "password": <the password of the admin acount to create in the database>,
+            "databasePath": <the local volume to mount on the database docker to host your database>,
+            "localhostPort": <the port you want to use on localhost to expose the database>
+        }
+    }

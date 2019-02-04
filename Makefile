@@ -14,6 +14,7 @@ _OK=\x1b[32;01m
 
 # Env variables
 WEB_CLIENT_PORT		:= $(call conf, benderWebClient.localhostPort)
+API_PORT			:= $(call conf, benderApi.localhostPort)
 USERNAME			:= $(call conf, benderDatabase.username)
 EMAIL				:= $(call conf, benderDatabase.email)
 PASSWORD			:= $(call conf, benderDatabase.password)
@@ -37,8 +38,12 @@ endif
 
 build:
 	@echo "${_CYAN}======== STARTING BUILDING PROCESS =======${_END}"
+ifeq ($(API_PORT), undefined)
+	$(eval API_PORT := 3000)
+	@echo "${_ERROR} XX No api port defined in .benderconf, using default.${_END}"
+endif
 	@echo "${_OK} => Building Bender services...${_END}"
-	@USERNAME='' EMAIL='' PASSWORD='' DATABASE_PATH='' docker-compose build
+	@USERNAME='' EMAIL='' PASSWORD='' DATABASE_PATH='' API_PORT=$(API_PORT) docker-compose build
 	@echo "${_CYAN}======== FINISHED INSTALL PROCESS =======${_END}"
 
 start:
@@ -46,6 +51,14 @@ start:
 ifeq ($(WEB_CLIENT_PORT), undefined)
 	$(eval WEB_CLIENT_PORT := 3000)
 	@echo "${_ERROR} XX No web client port defined in .benderconf, using default.${_END}"
+endif
+ifeq ($(API_PORT), undefined)
+	$(eval API_PORT := 3000)
+	@echo "${_ERROR} XX No api port defined in .benderconf, using default.${_END}"
+endif
+ifeq ($(DATABASE_PORT), undefined)
+	$(eval DATABASE_PORT := 5432)
+	@echo "${_ERROR} XX No database port defined in .benderconf, using default.${_END}"
 endif
 ifeq ($(USERNAME), undefined)
 	$(eval USERNAME := 'superuser')
@@ -64,10 +77,11 @@ ifeq ($(DATABASE_PATH), undefined)
 	@echo "${_ERROR} XX No databasePath defined in .benderconf, using default.${_END}"
 endif
 	@echo "${_OK} => Web client starting at http://localhost:$(WEB_CLIENT_PORT)...${_END}"
+	@echo "${_OK} => API starting at http://localhost:$(API_PORT)...${_END}"
 	@echo "${_OK} => Creating database in $(DATABASE_PATH)...${_END}"
 	@echo "${_OK} => Creating user [username=${USERNAME}, email=${EMAIL} password=${PASSWORD}]...${_END}"
-	@echo "${_OK} => Launching API...${_END}"
-	@WEB_CLIENT_PORT=$(WEB_CLIENT_PORT) DATABASE_PATH=$(DATABASE_PATH) USERNAME=$(USERNAME) EMAIL=$(EMAIL) PASSWORD=$(PASSWORD) docker-compose up
+	@echo "${_OK} => Database starting at http://localhost:$(DATABASE_PORT)...${_END}"
+	@WEB_CLIENT_PORT=$(WEB_CLIENT_PORT) API_PORT=$(API_PORT) DATABASE_PORT=$(DATABASE_PORT) DATABASE_PATH=$(DATABASE_PATH) USERNAME=$(USERNAME) EMAIL=$(EMAIL) PASSWORD=$(PASSWORD) docker-compose up
 	@echo "${_CYAN}================== END ==================${_END}"
 
 stop:

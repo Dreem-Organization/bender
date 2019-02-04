@@ -3,12 +3,13 @@
         "localhostPort": 3000
     },
     "benderApi": {
-        
+        "localhostPort": 8000
     },
     "benderDatabase": {
         "username": "superuser",
         "email": "superuser@bender.com",
         "password": "superuser",
-        "databasePath": "./local/bender-database"
+        "databasePath": "./local/bender-database",
+        "localhostPort": 5432
     }
 }

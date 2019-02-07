@@ -27,10 +27,9 @@ Bender is a hyperparameters optimizer for black box optimization. It is currentl
 
 It features 3 kind of components:
 
-- *benderopt*: A custom library implementing 3 algorithms:
+- *benderopt*: A custom library implementing 2 algorithms:
     - Random Search
     - Parzen Estimator Optimization (TPE-like)
-    - Model Based Optimization (SMAC-like)
 
 - *bender-api*: A high level interface to interact with bender functionalities.
     - CRUD for experiments, algorithms and trials.

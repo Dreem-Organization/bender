@@ -50,9 +50,9 @@ It features 3 kind of components:
 Use bender locally
 ******************
 
-If you don't want to use our online services, you still have the option to run bender locally.
+If you don't want to use our online services, you still have the option to run bender locally using docker.
 
-**Prerequisites**: git, docker
+**Prerequisites**: docker and git
 
 To do so, first clone, fork, or download this repository, and from its root run the following command lines :
 

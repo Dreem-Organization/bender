@@ -9,7 +9,7 @@
         "username": "superuser",
         "email": "superuser@bender.com",
         "password": "superuser",
-        "databasePath": "./local/bender-database",
+        "databasePath": "~/bender-database",
         "localhostPort": 5432
     }
 }

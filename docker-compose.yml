@@ -1,15 +1,14 @@
 version: '3.5'
 services:
   bender-web-client:
+    image: dreem/bender-web-client
     container_name: bender-web-client
-    build:
-      context: ./local/bender-web-client
-      args:
-        BUILD_COMMAND: "cross-env API_URL=http://localhost:${API_PORT:-8000} NODE_ENV=packaged webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout"
     ports:
       - "${WEB_CLIENT_PORT:-3000}:8000"
     networks:
       - bender-network
+    environment:
+      - API_URL=http:\/\/localhost:${API_PORT:-8000}
   bender-database:
     image: "postgres:9.6"
     container_name: bender-database
@@ -23,18 +22,16 @@ services:
     volumes:
       - ${DATABASE_PATH}:/var/lib/postgresql/data
   bender-api:
+    image: dreem/bender-api
     container_name: bender-api
     depends_on:
       - bender-database
-    build: ./local/bender-api
     ports:
       - "${API_PORT:-8000}:8000"
     networks:
       - bender-network
     environment:
       - DJANGO_SETTINGS_MODULE=bender_service.settings.development
-    volumes:
-      - ./local/bender-api/bender_service:/usr/src/app
     command: bash /run_packaged.sh ${USERNAME} ${EMAIL} ${PASSWORD} ${DATABASE_PORT:-5432}
 
 networks:

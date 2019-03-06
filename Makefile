@@ -20,31 +20,7 @@ EMAIL				:= $(call conf, benderDatabase.email)
 PASSWORD			:= $(call conf, benderDatabase.password)
 DATABASE_PATH		:= $(call conf, benderDatabase.databasePath)
 
-all: install build start
-
-install:
-	@echo "${_CYAN}======== STARTING INSTALL PROCESS ========${_END}"
-	@echo "${_OK} => Creating ./local folder...${_END}"
-	-@mkdir -p ./local;
-	-@mkdir -p ./local/bender-database;
-	@echo "${_OK} => Downloading Bender dependencies...${_END}"
-ifeq ($(wildcard ./local/bender-web-client/.*),)
-	-@git clone -q https://github.com/Dreem-Organization/bender-web-client.git ./local/bender-web-client;
-endif
-ifeq ($(wildcard ./local/bender-api/.*),)
-	-@git clone -q https://github.com/Dreem-Organization/bender-api.git ./local/bender-api;
-endif
-	@echo "${_CYAN}======== FINISHED INSTALL PROCESS ========${_END}"
-
-build:
-	@echo "${_CYAN}======== STARTING BUILDING PROCESS =======${_END}"
-ifeq ($(API_PORT), undefined)
-	$(eval API_PORT := 3000)
-	@echo "${_ERROR} XX No api port defined in .benderconf, using default.${_END}"
-endif
-	@echo "${_OK} => Building Bender services...${_END}"
-	@USERNAME='' EMAIL='' PASSWORD='' DATABASE_PATH='' API_PORT=$(API_PORT) docker-compose build
-	@echo "${_CYAN}======== FINISHED INSTALL PROCESS =======${_END}"
+all: start
 
 start:
 	@echo "${_CYAN}========== LAUNCHING SERVICES ===========${_END}"

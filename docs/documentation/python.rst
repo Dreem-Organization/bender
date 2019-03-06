@@ -21,7 +21,7 @@ Import and Login
 
 .. code-block:: python
 
-    from bender import Bender
+    from benderclient import Bender
     b = Bender()
 
 When you create a new bender object, it will automatically try to connect to the bender API so make sure you have a working internet connection.

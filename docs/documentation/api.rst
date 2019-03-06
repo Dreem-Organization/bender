@@ -40,8 +40,6 @@ Login
             "pk": 83,
             "username": "my_user", 
             "email": "my@mail.com", 
-            "first_name": "my_first_name", 
-            "last_name": "my_last_name", 
         }
     }
 

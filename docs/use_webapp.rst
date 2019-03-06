@@ -14,7 +14,7 @@ Let's make a tour of the web client :
 Login
 *****
 
-.. image:: https://i.ibb.co/5j5nT77/Screen-Shot-2018-11-26-at-11-20-29.png
+.. image:: https://static.rythm.co/bender/sc_1.png
    :alt: Login menu
 
 First, on `bender.dreem.com <https://bender.dreem.com/>`_, log yourself in or create an account if you don't already have one.
@@ -29,19 +29,17 @@ The dashboard is the heart of the web client and is divided in different parts:
 The menu
 ********
 
-.. image:: https://i.ibb.co/98ppz4s/Screen-Shot-2018-11-26-at-11-01-13.png
+.. image:: https://static.rythm.co/bender/sc_2.png
    :alt: Dashboard menu
 
-Here you can perform some basic actions like looking at your profile informations and update them, loging out, reporting some bug or contact us.
-
-The Bender logo at the top indicates the activity of the page. When the antena of bender is broadcasting it means that the page is loading some elements : be patient. ;)
+Here you can perform some basic actions like looking at your profile informations and update them, loging out or contact us.
 
 You can hide or show this menu by clicking on the little arrow on the side.
 
 The dynamic breadcrumb
 **********************
 
-.. image:: https://i.ibb.co/hKtS1hM/Screen-Shot-2018-11-26-at-11-01-00.png
+.. image:: https://static.rythm.co/bender/sc_3.png
    :alt: Dynamic breadcrumb
 
 You can find here all the usefull informations about the **Board** you are curently on.
@@ -60,7 +58,7 @@ Again, within the boards we can identify different elements :
 The experiments board
 *********************
 
-.. image:: https://i.ibb.co/YyXY1Hr/Screen-Shot-2018-11-26-at-11-14-30.png
+.. image:: https://static.rythm.co/bender/sc_4.png
    :alt: Experiments board
 
 On this **Board** you can see a simple list of the **Experiments** that you currently own with some basic infomations related.
@@ -72,7 +70,7 @@ To create a new **Experiment** just click the green plus sign at the bottom of t
 The ranking board
 *****************
 
-.. image:: https://i.ibb.co/8bXTrRg/Screen-Shot-2018-11-26-at-11-14-12.png
+.. image:: https://static.rythm.co/bender/sc_5.png
    :alt: Ranking board
 
 Here you can see all your different **Algos** ranked by a selected performance metric.
@@ -90,10 +88,10 @@ And still within the **Algo** cell you have 2 buttons to enter the **Trials Boar
 The trials board
 ****************
 
-.. image:: https://i.ibb.co/NxMLN21/Screen-Shot-2018-11-26-at-11-00-17.png
+.. image:: https://static.rythm.co/bender/sc_6.png
    :alt: Trials board
 
-.. image:: https://i.ibb.co/z5fKHsc/Screen-Shot-2018-11-26-at-11-15-08.png
+.. image:: https://static.rythm.co/bender/sc_7.png
    :alt: Trials board
 
 The final board : two modes depending on the botton you clicked on the **Ranking Board**, line or scatter views.

@@ -27,10 +27,9 @@ Bender is a hyperparameters optimizer for black box optimization. It is currentl
 
 It features 3 kind of components:
 
-- *benderopt*: A custom library implementing 3 algorithms:
+- *benderopt*: A custom library implementing 2 algorithms:
     - Random Search
     - Parzen Estimator Optimization (TPE-like)
-    - Model Based Optimization (SMAC-like)
 
 - *bender-api*: A high level interface to interact with bender functionalities.
     - CRUD for experiments, algorithms and trials.
@@ -50,9 +49,9 @@ It features 3 kind of components:
 Use bender locally
 ******************
 
-If you don't want to use our online services, you still have the option to run bender locally.
+If you don't want to use our online services, you still have the option to run bender locally using docker.
 
-**Prerequisites**: git, docker
+**Prerequisites**: docker and git
 
 To do so, first clone, fork, or download this repository, and from its root run the following command lines :
 

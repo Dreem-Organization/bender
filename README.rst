@@ -45,6 +45,9 @@ It features 3 kind of components:
 .. image:: https://static.rythm.co/bender/workflow_diagram_api_other_client@large.jpg
    :alt: API - OTHER CLIENTS
 
+You can find a medium post about bender here:
+https://medium.com/@dylanheirstraeten/bender-c394a5bda78b
+
 
 Use bender locally
 ******************
